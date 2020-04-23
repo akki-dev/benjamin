@@ -1926,6 +1926,8 @@ h6 {
   right: 0;
   transition: all 0.5s;
   z-index: 997;
+  background: rgba(20, 2, 0, 0.1);
+
 }
 
 #header.header-scrolled {
@@ -2330,7 +2332,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area {
-  background: url(../img/header-bg.jpg) center;
+  background: url(../img/header-bg-1.jpg) center;
   background-size: cover;
 }
 
@@ -2342,13 +2344,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 768px) {
   .banner-area {
-    background: url(../img/header-bg.jpg);
+    background: url(../img/header-bg-1.jpg);
     background-position: 50% 90% 50% 50%;
   }
 }
 
 .banner-content {
   margin-top: -250px;
+  display: none;
 }
 
 .banner-content h1 {
@@ -2365,6 +2368,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media (max-width: 991.98px) {
+  .banner-content {
+    display: block;
+  }
   .banner-content h1 {
     font-size: 36px;
   }
@@ -2442,7 +2448,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .video-right {
-  background: url(../img/video-bg.jpg) no-repeat center;
+  background: url(../img/video-bg-1.jpg) no-repeat center;
   background-size: cover;
   height: 350px;
   border-radius: 10px;
@@ -2450,7 +2456,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .video-right .overlay-bg {
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.78);
+  background-color: rgba(0, 0, 0, 0.45);
 }
 
 .video-right .play-btn {
@@ -2574,8 +2580,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .footer-area {
   color: #fff;
-  padding-top: 220px;
-  background: url(../img/footer-bg.jpg) center;
+  padding-top: 222px;
+  background: url(../img/footer-bg-1.jpg) center;
   background-size: cover;
 }
 
@@ -2799,4 +2805,28 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .switch-wrap p {
   margin: 0;
+}
+
+.imaMedia{
+  max-width: 250px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+@media (max-width : 540px){
+  .imaMedia{
+    width: 250px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width : 560px) and (max-width : 767.98px){
+  .imaMedia{
+    padding-bottom: 0 !important; 
+  }
+}
+
+.seMore{
+  margin-top: 20px;
+
 }
