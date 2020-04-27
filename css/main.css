@@ -2766,10 +2766,16 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center;
 }
 
+.generic-banner5 {
+  background: url(../img/a_9.jpg);
+  text-align: center;
+}
+
 .generic-banner .height,
 .generic-banner2 .height,
 .generic-banner3 .height,
-.generic-banner4 .height {
+.generic-banner4 .height,
+.generic-banner5 .height {
   height: 500px;
 }
 
@@ -2778,46 +2784,33 @@ body.mobile-nav-active #mobile-nav-toggle {
   .generic-banner .height,
   .generic-banner2 .height,
   .generic-banner3 .height,
-  .generic-banner4 .height {
+  .generic-banner4 .height,
+  .generic-banner5 .height {
     height: 400px;
   }
 }
 
-.generic-banner .generic-banner-content h2,
-.generic-banner2 .generic-banner-content h2,
-.generic-banner3 .generic-banner-content h2,
-.generic-banner4 .generic-banner-content h2 {
+.generic-banner .generic-banner-content h1,
+.generic-banner2 .generic-banner-content h1,
+.generic-banner3 .generic-banner-content h1,
+.generic-banner4 .generic-banner-content h1,
+.generic-banner5 .generic-banner-content h1 {
   line-height: 1.2em;
   margin-bottom: 20px;
+  font-size: 50px;
 }
 
 @media (max-width: 991.98px) {
 
-  .generic-banner .generic-banner-content h2 br,
-  .generic-banner2 .generic-banner-content h2 br,
-  .generic-banner3 .generic-banner-content h2 br,
-  .generic-banner4 .generic-banner-content h2 br {
+  .generic-banner .generic-banner-content h1 br,
+  .generic-banner2 .generic-banner-content h1 br,
+  .generic-banner3 .generic-banner-content h1 br,
+  .generic-banner4 .generic-banner-content h1 br,
+  .generic-banner5 .generic-banner-content h1 br {
     display: none;
   }
 }
 
-.generic-banner .generic-banner-content p,
-.generic-banner2 .generic-banner-content p,
-.generic-banner3 .generic-banner-content p,
-.generic-banner4 .generic-banner-content p {
-  text-align: center;
-  font-size: 16px;
-}
-
-@media (max-width: 991.98px) {
-
-  .generic-banner .generic-banner-content p br,
-  .generic-banner2 .generic-banner-content p br,
-  .generic-banner3 .generic-banner-content p br,
-  .generic-banner4 .generic-banner-content p br {
-    display: none;
-  }
-}
 
 .generic-content h1 {
   font-weight: 600;
@@ -2927,4 +2920,37 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 .br{
   padding-top: 12px;
+}
+
+.tablecenter{
+  text-align: center;
+}
+
+.tableIma{
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+@media (max-width : 560px){
+  .tableIma{
+    display: none;
+  }
+}
+
+.tableVertical{
+  vertical-align: middle !important;
+}
+
+.tableUpgrate{
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.tableAncho{
+  width: 150px;
+}
+
+.COUPON{
+  max-width: 300px;
+  margin-top: 15px;
 }
