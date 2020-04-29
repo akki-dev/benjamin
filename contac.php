@@ -1,5 +1,6 @@
 <?php
 include 'database/consult.php';
+include 'components/cart_value.php';
 include 'template/head.php';
 include 'template/nav.php';
 ?>

@@ -21,16 +21,16 @@
 			<div class="container">
 				<div class="row align-items-center justify-content-between d-flex">
 					<div id="logo">
-						<a href="index.html"><img src="img/logo-2.png" alt="" title="" /></a>
+						<a href="index.php"><img src="img/logo-2.png" alt="" title="" /></a>
 					</div>
 					<nav id="nav-menu-container">
 						<ul class="nav-menu">
-							<li class="menu-active"><a href="index.html">Home</a></li>
-							<li><a href="story.html">Our Story</a></li>
-							<li><a href="shop.html">Shop</a></li>
-							<li><a href="story.html">Wholesale</a></li>
-							<li><a href="contac.html">Contact</a></li>
-							<li><a href="cart.html" class="genric-btn primary circle arrow small">Cart (0)</samp></a></li>
+							<li class="menu-active"><a href="index.php">Home</a></li>
+							<li><a href="story.php">Our Story</a></li>
+							<li><a href="shop.php">Shop</a></li>
+							<li><a href="story.php">Wholesale</a></li>
+							<li><a href="contac.php">Contact</a></li>
+							<li><a href="cart.php" class="genric-btn primary circle arrow small">Cart (<?php echo(empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);?>)</samp></a></li>
 						</ul>
 					</nav><!-- #nav-menu-container -->
 				</div>

@@ -78,6 +78,10 @@
 		<script src="js/jquery.counterup.min.js"></script>
 		<script src="js/mail-script.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/src/bootstrap-input-spinner.js"></script>
+		<script>
+			$("input[type='number']").inputSpinner();
+		</script>
 	</body>
 
 	</html>

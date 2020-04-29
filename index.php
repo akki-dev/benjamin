@@ -1,5 +1,6 @@
 <?php
 include 'database/consult.php';
+include 'components/cart_value.php';
 include 'template/head.php';
 include 'template/nav.php';
 ?>
@@ -73,7 +74,7 @@ include 'template/nav.php';
 							<p>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit.
 							</p>
-							<a href="product.html" class="genric-btn primary circle seMore">see more</a>
+							<a href="product.php" class="genric-btn primary circle seMore">see more</a>
 						</div>
 					</div>
 				</div>
