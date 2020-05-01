@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-05-2020 a las 04:04:21
+-- Tiempo de generación: 01-05-2020 a las 23:15:46
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.4
 
@@ -34,6 +34,13 @@ CREATE TABLE `tbldetalleventa` (
   `PRECIOUNITARIO` decimal(20,0) NOT NULL,
   `CANTIDAD` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `tbldetalleventa`
+--
+
+INSERT INTO `tbldetalleventa` (`ID`, `IDVENTA`, `IDPRODUCTO`, `PRECIOUNITARIO`, `CANTIDAD`) VALUES
+(91, 62, 8, '120', 1);
 
 -- --------------------------------------------------------
 
@@ -66,6 +73,31 @@ INSERT INTO `tblproductos` (`ID`, `Nombre`, `Precio`, `Descripcon`, `Imagen`) VA
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tblstate`
+--
+
+CREATE TABLE `tblstate` (
+  `idState` int(11) NOT NULL,
+  `state` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tblstate`
+--
+
+INSERT INTO `tblstate` (`idState`, `state`) VALUES
+(1, 'Australian Capital Territory'),
+(2, 'New South Wales'),
+(3, 'Northern Territory'),
+(4, 'Queensland'),
+(5, 'South Australia'),
+(6, 'Tasmania'),
+(7, 'Victoria'),
+(8, 'Western Australia');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tblventas`
 --
 
@@ -75,15 +107,24 @@ CREATE TABLE `tblventas` (
   `Fecha` datetime NOT NULL,
   `Correo` varchar(500) COLLATE utf8_bin NOT NULL,
   `Total` decimal(60,0) NOT NULL,
-  `status` varchar(200) COLLATE utf8_bin NOT NULL
+  `status` varchar(200) COLLATE utf8_bin NOT NULL,
+  `name` varchar(200) COLLATE utf8_bin NOT NULL,
+  `lastname` varchar(200) COLLATE utf8_bin NOT NULL,
+  `country` varchar(200) COLLATE utf8_bin NOT NULL,
+  `addressA` varchar(200) COLLATE utf8_bin NOT NULL,
+  `city` varchar(200) COLLATE utf8_bin NOT NULL,
+  `state` varchar(200) COLLATE utf8_bin NOT NULL,
+  `postcode` varchar(200) COLLATE utf8_bin NOT NULL,
+  `phone` varchar(200) COLLATE utf8_bin NOT NULL,
+  `addressD` varchar(200) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `tblventas`
 --
 
-INSERT INTO `tblventas` (`ID`, `ClaveTransaccion`, `Fecha`, `Correo`, `Total`, `status`) VALUES
-(49, 'prueba', '2020-04-30 18:02:08', 'gohanje9815@gmail.com', '100', 'pendiente');
+INSERT INTO `tblventas` (`ID`, `ClaveTransaccion`, `Fecha`, `Correo`, `Total`, `status`, `name`, `lastname`, `country`, `addressA`, `city`, `state`, `postcode`, `phone`, `addressD`) VALUES
+(62, '5aam4mkd4ncdu1bql2mo5kgh38', '2020-05-01 15:17:57', 'gohanje9815@gmail.com', '120', 'pendiente', 'Gohan Sanchez', 'PAPARASSI', 'Perú', 'Mz E lt 5', 'Lima', 'Northern Territory', '1151', '912037540', ' ');
 
 --
 -- Índices para tablas volcadas
@@ -104,6 +145,12 @@ ALTER TABLE `tblproductos`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indices de la tabla `tblstate`
+--
+ALTER TABLE `tblstate`
+  ADD PRIMARY KEY (`idState`);
+
+--
 -- Indices de la tabla `tblventas`
 --
 ALTER TABLE `tblventas`
@@ -117,7 +164,7 @@ ALTER TABLE `tblventas`
 -- AUTO_INCREMENT de la tabla `tbldetalleventa`
 --
 ALTER TABLE `tbldetalleventa`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT de la tabla `tblproductos`
@@ -126,10 +173,16 @@ ALTER TABLE `tblproductos`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT de la tabla `tblstate`
+--
+ALTER TABLE `tblstate`
+  MODIFY `idState` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de la tabla `tblventas`
 --
 ALTER TABLE `tblventas`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- Restricciones para tablas volcadas
