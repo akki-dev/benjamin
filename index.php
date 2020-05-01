@@ -58,132 +58,43 @@ include 'template/nav.php';
 			</div>
 		</div>
 		<div class="row">
+			<?php foreach($listaProductoSeis as $productoSeis){ ?>
 			<div class="col-lg-4">
 				<div class="single-menu">
 					<div class="row">
-						<div class="imaMedia col-lg-12 col-sm-6">
-							<img src="img/co_6.png" class="img-fluid" alt="" srcset="">
+						<div class="imaMedia col-lg-12 col-md-6 col-sm-5">
+							<img src="<?php echo $productoSeis['Imagen']; ?>" class="img-fluid" alt="" srcset="">
 						</div>
-						<div class="col-lg-12 col-sm-6">
+						<div class="col-lg-12 col-md-6 col-sm-7">
 							<div class="title-div justify-content-between d-flex">
-								<h4>Cappuccino</h4>
+
+								<h4><?php echo $productoSeis['Nombre']; ?></h4>
 								<p class="price float-right">
-									$49
+									$ <?php echo $productoSeis['Precio']; ?>
 								</p>
+
 							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</p>
-							<a href="product.php" class="genric-btn primary circle seMore">see more</a>
+							<p><?php echo $productoSeis['Descripcon']?> </p>
+
+							<form action="product.php" method="get">
+								<input type="hidden" name="id" id="id"
+									value="<?php echo openssl_encrypt($productoSeis['ID'],COD,KEY); ?>">
+								<input type="hidden" name="imagen" id="imagen"
+									value="<?php echo $productoSeis['Imagen']; ?>">
+								<input type="hidden" name="precio" id="precio"
+									value="<?php echo openssl_encrypt($productoSeis['Precio'],COD,KEY); ?>">
+								<input type="hidden" name="nombre" id="nombre"
+									value="<?php echo openssl_encrypt($productoSeis['Nombre'],COD,KEY); ?>">
+								<input type="hidden" name="descrip" id="decrip"
+									value="<?php echo openssl_encrypt($productoSeis['Descripcon'],COD,KEY); ?>">
+								<button type="submit" class="genric-btn primary circle seMore">see more</button>
+							</form>
+
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4">
-				<div class="single-menu">
-					<div class="row">
-						<div class="imaMedia col-lg-12 col-sm-6">
-							<img src="img/co_5.png" class="img-fluid" alt="" srcset="">
-						</div>
-						<div class="col-lg-12 col-sm-6">
-							<div class="title-div justify-content-between d-flex">
-								<h4>Cappuccino</h4>
-								<p class="price float-right">
-									$49
-								</p>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</p>
-							<a href="product.html" class="genric-btn primary circle seMore">see more</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="single-menu">
-					<div class="row">
-						<div class="imaMedia col-lg-12 col-sm-6">
-							<img src="img/co_6.png" class="img-fluid" alt="" srcset="">
-						</div>
-						<div class="col-lg-12 col-sm-6">
-							<div class="title-div justify-content-between d-flex">
-								<h4>Cappuccino</h4>
-								<p class="price float-right">
-									$49
-								</p>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</p>
-							<a href="product.html" class="genric-btn primary circle seMore">see more</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="single-menu">
-					<div class="row">
-						<div class="imaMedia col-lg-12 col-sm-6">
-							<img src="img/co_5.png" class="img-fluid" alt="" srcset="">
-						</div>
-						<div class="col-lg-12 col-sm-6">
-							<div class="title-div justify-content-between d-flex">
-								<h4>Cappuccino</h4>
-								<p class="price float-right">
-									$49
-								</p>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</p>
-							<a href="product.html" class="genric-btn primary circle seMore">see more</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="single-menu">
-					<div class="row">
-						<div class="imaMedia col-lg-12 col-sm-6">
-							<img src="img/co_6.png" class="img-fluid" alt="" srcset="">
-						</div>
-						<div class="col-lg-12 col-sm-6">
-							<div class="title-div justify-content-between d-flex">
-								<h4>Cappuccino</h4>
-								<p class="price float-right">
-									$49
-								</p>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</p>
-							<a href="product.html" class="genric-btn primary circle seMore">see more</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="single-menu">
-					<div class="row">
-						<div class="imaMedia col-lg-12 col-sm-6">
-							<img src="img/co_5.png" class="img-fluid" alt="" srcset="">
-						</div>
-						<div class="col-lg-12 col-sm-6">
-							<div class="title-div justify-content-between d-flex">
-								<h4>Cappuccino</h4>
-								<p class="price float-right">
-									$49
-								</p>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							</p>
-							<a href="product.html" class="genric-btn primary circle seMore">see more</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php }  ?>
 		</div>
 	</div>
 </section>

@@ -58,7 +58,8 @@ include 'template/nav.php';
                                                 value="<?php echo openssl_encrypt($producto['ID'],COD,KEY);?>">
                                             <input type="text" name="canta" id="canta"
                                                 value="<?php  echo $producto['CANTIDAD']; ?>" class="form-control"
-                                                aria-label="Example text with button addon" aria-describedby="button-addon2">
+                                                aria-label="Example text with button addon"
+                                                aria-describedby="button-addon2">
                                             <div class="input-group-append">
                                                 <button name="btnAccion" value="add" type="submit"
                                                     class="genric-btn primary ">Refresh</button>
@@ -104,8 +105,8 @@ include 'template/nav.php';
         <div>
             <table class="table">
                 <tbody>
-                <?php $igv=$total*0.18; ?>
-                <?php $subtotal=$total/1.18; ?>
+                    <?php $igv=$total*0.18; ?>
+                    <?php $subtotal=$total/1.18; ?>
                     <tr>
                         <th class="tableAncho" scope="row">Subtotal
                         </th>
@@ -123,7 +124,9 @@ include 'template/nav.php';
             </table>
         </div>
         <div>
-            <button class="genric-btn primary" type="button" id="button-addon2">Proceed To Checkout</button>
+            <form action="checkout.php" method="post">
+                <button class="genric-btn primary" name="btnAccion" value="proceder" type="submit">Proceed To Checkout</button>
+            </form>
         </div>
     </div>
 </section>

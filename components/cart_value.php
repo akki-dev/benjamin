@@ -56,14 +56,9 @@ switch($_POST['btnAccion']){
         }
     }
     $mensaje= print_r($_SESSION,true);
-
-
-
-
     break;
 
     case "Eliminar":
-
     if (is_numeric(openssl_decrypt($_POST['id'],COD,KEY))) {
         $ID=openssl_decrypt($_POST['id'],COD,KEY );
         foreach($_SESSION['CARRITO'] as $indice=>$producto){
@@ -72,30 +67,23 @@ switch($_POST['btnAccion']){
             }
 
         }
-
     }else{ $mensaje.="Upsss.... Id Incorrecto".$ID."<br>"; }
     break;
 
 
     case "add":
-    
-
     if (is_numeric($_POST['canta'])) {
         $CANTA=$_POST['canta'];
     }else{ $mensaje.="Upsss.... Cantidad Incorrecto"; break; }
-
     if (is_numeric(openssl_decrypt($_POST['id'],COD,KEY))) {
         $ID=openssl_decrypt($_POST['id'],COD,KEY );
         foreach($_SESSION['CARRITO'] as $indice=>$producto){
             if ($producto['ID']==$ID) {
                 $_SESSION['CARRITO'][$indice]['CANTIDAD'] = $CANTA;
             }
-
         }
-
     }else{ $mensaje.="Upsss.... Id Incorrecto".$ID."<br>"; }
     break;
-
     }
 }
 ?>
