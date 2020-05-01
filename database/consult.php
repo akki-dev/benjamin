@@ -12,4 +12,9 @@ $sentancia=$pdo->prepare("SELECT * FROM `tblproductos` LIMIT 6");
 $sentancia->execute();
 $listaProductoSeis=$sentancia->fetchAll(PDO::FETCH_ASSOC);
 
+
+// State
+$sentancia=$pdo->prepare("SELECT * FROM `tblstate`");
+$sentancia->execute();
+$stateO=$sentancia->fetchAll(PDO::FETCH_ASSOC);
 ?>

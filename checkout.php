@@ -26,7 +26,7 @@ $total=$total+($producto['PRECIO']*$producto['CANTIDAD']);}}?>
         <div class="col-12 pb-15">
             <h1>BILLING DETAILS</h1>
         </div>
-        <form class="was-validated" action="checkout_value.php" method="post">
+        <form class="was-validated" action="components/checkout_value.php" method="post">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputName">Name</label>
@@ -66,16 +66,11 @@ $total=$total+($producto['PRECIO']*$producto['CANTIDAD']);}}?>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputState">State</label>
-                    <select id="inputState" class="form-control">
+                    <select id="State" name="State" class="form-control">
                         <option selected>Choose...</option>
-                        <option>Australian Capital Territory</option>
-                        <option>New South Wales</option>
-                        <option>Northern Territory</option>
-                        <option>Queensland</option>
-                        <option>South Australia</option>
-                        <option>Tasmania</option>
-                        <option>Victoria</option>
-                        <option>Western Australia</option>
+                        <?php foreach($stateO as $optionSe){ ?>
+                            <option value="<?php echo $optionSe['state'] ?>"><?php echo $optionSe['state'] ?></option>
+                            <?php }  ?>
                     </select>
                 </div>
                 <div class="form-group col-md-2">

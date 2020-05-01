@@ -12,8 +12,9 @@ if ($_POST) {
   $lastname = $_POST['Lastname'];
   $email = $_POST['Email'];
   $phone = $_POST['Phone'];
-  $address = $_POST['Address'];
+  $addressA = $_POST['Address'];
   $addressD = $_POST['AddressD'];
+  $state = $_POST['State'];
   $country = $_POST['Country'];
   $city = $_POST['City'];
   $zip = $_POST['Zip'];
@@ -21,20 +22,24 @@ if ($_POST) {
   foreach($_SESSION['CARRITO'] as $indice=>$producto){
       $total=$total+($producto['PRECIO']*$producto['CANTIDAD']);
   }
-  $sentancia=$pdo->prepare("INSERT INTO `tblventas` (`ID`, `ClaveTransaccion`, `Fecha`, `Correo`, `Total`, `status`, `name`, `lastname`, `country`, `address`, `city`, `state`, `postcode`, `phone`, `addressD`)
-  VALUES (NULL,:ClaveTransaccion, NOW(), :Correo, :Total, 'pendiente', '', :lastname, :country, '', :city, '', :postcode, :phone, :addressD);");
+$sentancia=$pdo->prepare("INSERT INTO tblventas (ID, ClaveTransaccion, Fecha, Correo, Total, status, name, lastname, country, addressA, city, state, postcode, phone, addressD)
+  VALUES (NULL,:ClaveTransaccion, NOW(), :Correo, :Total, 'pendiente', :name, :lastname, :country, :addressA, :city, :state, :postcode, :phone, :addressD);");
   
   $sentancia->bindParam(":ClaveTransaccion",$SID);
   $sentancia->bindParam(":Correo",$email);
   $sentancia->bindParam(":Total",$total);
+  $sentancia->bindParam(":name",$name);
   $sentancia->bindParam(":lastname",$lastname);
   $sentancia->bindParam(":country",$country);
+  $sentancia->bindParam(":addressA",$addressA);
   $sentancia->bindParam(":city",$city);
+  $sentancia->bindParam(":state",$state);
   $sentancia->bindParam(":postcode",$zip);
   $sentancia->bindParam(":phone",$phone);
   $sentancia->bindParam(":addressD",$addressD);
   $sentancia->execute();
   $idVenta=$pdo->lastInsertId();
+
 
   foreach($_SESSION['CARRITO'] as $indice=>$producto){
     $sentancia=$pdo->prepare("INSERT INTO 
