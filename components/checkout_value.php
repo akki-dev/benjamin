@@ -22,7 +22,7 @@ if ($_POST) {
       $total=$total+($producto['PRECIO']*$producto['CANTIDAD']);
   }
   $sentancia=$pdo->prepare("INSERT INTO `tblventas` (`ID`, `ClaveTransaccion`, `Fecha`, `Correo`, `Total`, `status`, `name`, `lastname`, `country`, `address`, `city`, `state`, `postcode`, `phone`, `addressD`)
-  VALUES (NULL,:ClaveTransaccion, '', NOW(), :Correo, :Total, 'pendiente', '', :lastname, :country, '', :city, '', :postcode, :phone, :addressD);");
+  VALUES (NULL,:ClaveTransaccion, NOW(), :Correo, :Total, 'pendiente', '', :lastname, :country, '', :city, '', :postcode, :phone, :addressD);");
   
   $sentancia->bindParam(":ClaveTransaccion",$SID);
   $sentancia->bindParam(":Correo",$email);
